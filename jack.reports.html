@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey Creek Inventory - Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .reports-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .reports-header h2 {
+            margin: 0;
+        }
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .filter-bar input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1;
+        }
+        .styled-select {
+            position: relative;
+            display: inline-block;
+            width: 200px;
+        }
+        .styled-select select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            appearance: none;
+            cursor: pointer;
+        }
+        .styled-select::after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #666;
+        }
+        .filter-bar button {
+            border: none;
+            background-color: #003366;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .filter-bar button:hover {
+            background-color: #0055a5;
+        }
+        .reports-list {
+            margin-bottom: 20px;
+        }
+        .report-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            background: #fff;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .report-card h3 {
+            margin: 0;
+        }
+        .report-card button {
+            border: none;
+            background-color: #003366;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .report-card button:hover {
+            background-color: #0055a5;
+        }
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Whiskey Creek Inventory</h1>
+        <nav>
+            <ul>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.html">Dashboard</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.projects.html">Inventory</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.inventory.html">Projects</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.reports.html">Reports</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.settings.html" class="active">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="reports">
+            <div class="reports-header">
+                <h2>Reports</h2>
+            </div>
+            <div class="filter-bar">
+                <div class="styled-select">
+                    <select>
+                        <option value="all">All Report Types</option>
+                        <option value="inventory">Inventory Usage</option>
+                        <option value="projects">Project Costs</option>
+                        <option value="monthly">Monthly Summaries</option>
+                    </select>
+                </div>
+                <input type="date" placeholder="Start Date">
+                <input type="date" placeholder="End Date">
+                <button onclick="alert('Filter Applied')">Filter</button>
+            </div>
+            <div class="reports-list">
+                <div class="report-card">
+                    <div>
+                        <h3>Inventory Usage Report</h3>
+                        <p>Tracks material consumption for the selected period.</p>
+                    </div>
+                    <button onclick="alert('Downloading Inventory Usage Report')">Download</button>
+                </div>
+                <div class="report-card">
+                    <div>
+                        <h3>Project Costs Report</h3>
+                        <p>Summarizes material and labor costs for active projects.</p>
+                    </div>
+                    <button onclick="alert('Downloading Project Costs Report')">Download</button>
+                </div>
+                <div class="report-card">
+                    <div>
+                        <h3>Monthly Summary</h3>
+                        <p>Provides an overview of inventory and project activity.</p>
+                    </div>
+                    <button onclick="alert('Downloading Monthly Summary')">Download</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Whiskey Creek Marine Inventory Management System</p>
+    </footer>
+</body>
+</html>

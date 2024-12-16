@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey Creek Inventory - Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .inventory-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .inventory-header h2 {
+            margin: 0;
+        }
+        .inventory-header button {
+            background-color: #003366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .inventory-header button:hover {
+            background-color: #0055a5;
+        }
+        .project-header {
+            margin: 20px 0 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .inventory-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .inventory-table th, .inventory-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .inventory-table th {
+            background-color: #f4f4f4;
+        }
+        .inventory-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .action-buttons button {
+            border: none;
+            background-color: #003366;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .action-buttons button:hover {
+            background-color: #0055a5;
+        }
+        .action-buttons button svg {
+            width: 16px;
+            height: 16px;
+        }
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Whiskey Creek Inventory</h1>
+        <nav>
+            <ul>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.html">Dashboard</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.projects.html">Inventory</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.inventory.html">Projects</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.reports.html">Reports</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.settings.html" class="active">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inventory">
+            <div class="inventory-header">
+                <h2>Inventory Management</h2>
+                <button onclick="alert('Add New Item Placeholder')">Add New Item</button>
+            </div>
+            <!-- Shop Inventory -->
+            <div class="project-header">Shop</div>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Stock Level</th>
+                        <th>Reorder Threshold</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1/8th Plate Aluminum</td>
+                        <td>Lightweight aluminum sheet</td>
+                        <td>Metal</td>
+                        <td>50</td>
+                        <td>20</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button onclick="alert('Edit Item: 1/8th Plate Aluminum')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3h10M11 3l-4 4m4-4L7 3m-4 16l4-4m0 0l4 4m-4-4l-4 4m9 0H5"/>
+                                    </svg>
+                                </button>
+                                <button onclick="alert('Generate QR Code for 1/8th Plate Aluminum')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h5v5H4zM15 4h5v5h-5zM4 15h5v5H4zM15 15h5v5h-5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Flux</td>
+                        <td>Soldering flux for aluminum</td>
+                        <td>Consumables</td>
+                        <td>15 liters</td>
+                        <td>5 liters</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button onclick="alert('Edit Item: Flux')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3h10M11 3l-4 4m4-4L7 3m-4 16l4-4m0 0l4 4m-4-4l-4 4m9 0H5"/>
+                                    </svg>
+                                </button>
+                                <button onclick="alert('Generate QR Code for Flux')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h5v5H4zM15 4h5v5h-5zM4 15h5v5H4zM15 15h5v5h-5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Boat1 Inventory -->
+            <div class="project-header">Boat 1</div>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Stock Level</th>
+                        <th>Reorder Threshold</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1/8th Plate Aluminum</td>
+                        <td>Lightweight aluminum sheet</td>
+                        <td>Metal</td>
+                        <td>50</td>
+                        <td>20</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button onclick="alert('Edit Item: 1/8th Plate Aluminum')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3h10M11 3l-4 4m4-4L7 3m-4 16l4-4m0 0l4 4m-4-4l-4 4m9 0H5"/>
+                                    </svg>
+                                </button>
+                                <button onclick="alert('Generate QR Code for 1/8th Plate Aluminum')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h5v5H4zM15 4h5v5h-5zM4 15h5v5H4zM15 15h5v5h-5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Flux</td>
+                        <td>Soldering flux for aluminum</td>
+                        <td>Consumables</td>
+                        <td>15 liters</td>
+                        <td>5 liters</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button onclick="alert('Edit Item: Flux')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3h10M11 3l-4 4m4-4L7 3m-4 16l4-4m0 0l4 4m-4-4l-4 4m9 0H5"/>
+                                    </svg>
+                                </button>
+                                <button onclick="alert('Generate QR Code for Flux')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h5v5H4zM15 4h5v5h-5zM4 15h5v5H4zM15 15h5v5h-5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Whiskey Creek Marine Inventory Management System</p>
+    </footer>
+</body>
+</html>

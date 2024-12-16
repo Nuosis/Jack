@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey Creek Inventory - Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .settings-header h2 {
+            margin: 0;
+        }
+        .settings-section {
+            margin-bottom: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .settings-section h3 {
+            margin-top: 0;
+        }
+        .settings-section label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .settings-section input[type="text"],
+        .settings-section input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .styled-select {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .styled-select select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            appearance: none;
+            cursor: pointer;
+        }
+        .styled-select::after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #666;
+        }
+        .settings-section button {
+            border: none;
+            background-color: #003366;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .settings-section button:hover {
+            background-color: #0055a5;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Whiskey Creek Inventory</h1>
+        <nav>
+            <ul>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.html">Dashboard</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.projects.html">Inventory</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.inventory.html">Projects</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.reports.html">Reports</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.settings.html" class="active">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="settings">
+            <div class="settings-header">
+                <h2>Settings</h2>
+            </div>
+            <!-- Account Settings -->
+            <div class="settings-section">
+                <h3>Account Settings</h3>
+                <label for="select-account">Select Account</label>
+                <div class="styled-select">
+                    <select id="select-account">
+                        <option value="admin">Admin</option>
+                        <option value="staff1">Staff1</option>
+                        <option value="staff2">Staff2</option>
+                    </select>
+                </div>
+                <label for="username">Username</label>
+                <input type="text" id="username" value="admin">
+                <label for="email">Email Address</label>
+                <input type="text" id="email" value="admin@example.com">
+                <div class="action-buttons">
+                    <button onclick="alert('Account settings updated')">Save Changes</button>
+                    <button onclick="alert('Add new account')">Add Account</button>
+                </div>
+            </div>
+            <!-- Inventory Thresholds -->
+            <div class="settings-section">
+                <h3>Inventory Thresholds</h3>
+                <label for="select-stock">Select Stock Item</label>
+                <div class="styled-select">
+                    <select id="select-stock">
+                        <option value="item1">1/8th Plate Aluminum</option>
+                        <option value="item2">Flux</option>
+                        <option value="item3">Stainless Bolts</option>
+                    </select>
+                </div>
+                <label for="threshold">Reorder Threshold</label>
+                <input type="number" id="threshold" value="20">
+                <button onclick="alert('Threshold settings updated')">Save Changes</button>
+            </div>
+            <!-- Stock, Suppliers, and Products Management -->
+            <div class="settings-section">
+                <h3>Manage Stock, Suppliers, and Products</h3>
+                <label for="select-category">Category</label>
+                <div class="styled-select">
+                    <select id="select-category">
+                        <option value="stock">Stock</option>
+                        <option value="suppliers">Suppliers</option>
+                        <option value="products">Products</option>
+                    </select>
+                </div>
+                <div class="action-buttons">
+                    <button onclick="alert('Add New Item')">Add</button>
+                    <button onclick="alert('Edit Selected Item')">Edit</button>
+                    <button onclick="alert('Delete Selected Item')">Delete</button>
+                </div>
+            </div>
+            <!-- Email Notifications -->
+            <div class="settings-section">
+                <h3>Email Notifications</h3>
+                <label for="notify-email">Send Low Stock Alerts To</label>
+                <input type="text" id="notify-email" value="notifications@example.com">
+                <label for="frequency">Notification Frequency</label>
+                <div class="styled-select">
+                    <select id="frequency">
+                        <option value="immediate">Immediate</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
+                <button onclick="alert('Email notification settings updated')">Save Changes</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Whiskey Creek Marine Inventory Management System</p>
+    </footer>
+</body>
+</html>

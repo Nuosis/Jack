@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey Creek Inventory - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .widget {
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .widget h3 {
+            margin-top: 0;
+        }
+        .widget.transactions {
+            grid-column: 1 / -1;
+        }
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Whiskey Creek Inventory</h1>
+        <nav>
+            <ul>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.html">Dashboard</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.projects.html">Inventory</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.inventory.html">Projects</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.reports.html">Reports</a></li>
+                <li><a href="file:///Users/marcusswift/Documents/fileMakerDevelopment/Whiskey%20Creek/WireFrames/jack.settings.html" class="active">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard" class="dashboard">
+            <div class="widget transactions">
+                <h3>Recent Transactions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-12-14</td>
+                            <td>3/8th Plate Aluminum</td>
+                            <td>10</td>
+                            <td>Added</td>
+                        </tr>
+                        <tr>
+                            <td>2024-12-13</td>
+                            <td>Flux</td>
+                            <td>5 liters</td>
+                            <td>Used</td>
+                        </tr>
+                        <tr>
+                            <td>2024-12-12</td>
+                            <td>Stainless Bolts</td>
+                            <td>15 pcs</td>
+                            <td>Added</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="widget">
+                <h3>Inventory Overview</h3>
+                <p>Total Items: <strong>150</strong></p>
+                <p>Total Value: <strong>$25,000</strong></p>
+            </div>
+            <div class="widget">
+                <h3>Low Stock Alerts</h3>
+                <ul>
+                    <li>1/8th Plate Aluminum - 5 sheets remaining</li>
+                    <li>Stainless Bolts - 10 pcs remaining</li>
+                    <li>Flux - 2 liters remaining</li>
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>Projects Summary</h3>
+                <p>Active Projects: <strong>5</strong></p>
+                <p>Materials Allocated: <strong>$12,000</strong></p>
+            </div>
+            <div class="widget">
+                <h3>Upcoming Reorders</h3>
+                <ul>
+                    <li>Stainless Washers - PO#1024 pending</li>
+                    <li>1/8th Plate Aluminum - PO#1025 pending</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Whiskey Creek Marine Inventory Management System</p>
+    </footer>
+</body>
+</html>
